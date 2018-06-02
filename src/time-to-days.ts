@@ -1,5 +1,5 @@
 const conversion = {
-  hora: 0.04,
+  hora: 1 / 24,
   dia: 1,
   mes: 30,
   año: 365

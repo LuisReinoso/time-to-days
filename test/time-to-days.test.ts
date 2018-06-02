@@ -2,7 +2,7 @@ import tdays from '../src/time-to-days'
 
 describe('Conversion de tiempo a dias', () => {
   it('Deberia convertir horas a dias', () => {
-    expect(tdays.timeToDays(10, 'hora')).toBe(0.4)
+    expect(tdays.timeToDays(10, 'hora')).toBe(0.42)
   })
 
   it('Deberia convertir dias a dias', () => {
