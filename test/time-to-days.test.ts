@@ -1,23 +1,45 @@
-import timeToDays from '../src/time-to-days'
+import tdays from '../src/time-to-days'
 
 describe('Conversion de tiempo a dias', () => {
   it('Deberia convertir horas a dias', () => {
-    expect(timeToDays(10, 'hora')).toBe(0.4)
+    expect(tdays.timeToDays(10, 'hora')).toBe(0.4)
   })
 
   it('Deberia convertir dias a dias', () => {
-    expect(timeToDays(1, 'dia')).toBe(1)
+    expect(tdays.timeToDays(1, 'dia')).toBe(1)
   })
 
   it('Deberia convertir meses a dias', () => {
-    expect(timeToDays(2, 'mes')).toBe(60)
+    expect(tdays.timeToDays(2, 'mes')).toBe(60)
   })
 
   it('Deberia convertir años a dias', () => {
-    expect(timeToDays(2, 'año')).toBe(730)
+    expect(tdays.timeToDays(2, 'año')).toBe(730)
   })
 
   it('Deberia retornar valor si el tipo no existe', () => {
-    expect(timeToDays(5, 'tiempo')).toBe(5)
+    expect(tdays.timeToDays(5, 'tiempo')).toBe(5)
+  })
+})
+
+describe('Conversion de dias a tiempo', () => {
+  it('Deberia convertir dias a horas', () => {
+    expect(tdays.daysToTime(10, 'hora')).toBe(240)
+  })
+
+  it('Deberia convertir dias a dias', () => {
+    expect(tdays.daysToTime(1, 'dia')).toBe(1)
+  })
+
+  it('Deberia convertir dias a meses', () => {
+    expect(tdays.daysToTime(2, 'mes')).toBe(0.07)
+  })
+
+  it('Deberia convertir dias a años', () => {
+    expect(tdays.daysToTime(2, 'año')).toBe(0.01)
+  })
+
+  it('Deberia retornar valor si el tipo no existe', () => {
+    expect(tdays.daysToTime(5, 'tiempo')).toBe(5)
   })
 })
