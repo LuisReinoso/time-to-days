@@ -1,4 +1,4 @@
-const conversion = {
+const tiempoA = {
   hora: 1 / 24,
   dia: 1,
   mes: 30,
@@ -13,26 +13,26 @@ const conversion = {
  * @param {string} tipo Es el tipo de unidad de tiempo
  */
 function timeToDays(valor: number, tipo: string): number {
-  let valorFinal = 0.0
+  let tiempo = 0.0
   switch (tipo) {
     case 'hora':
-      valorFinal = valor * conversion['hora']
+      tiempo = valor * tiempoA['hora']
       break
     case 'dia':
-      valorFinal = valor * conversion['dia']
+      tiempo = valor * tiempoA['dia']
       break
     case 'mes':
-      valorFinal = valor * conversion['mes']
+      tiempo = valor * tiempoA['mes']
       break
     case 'año':
-      valorFinal = valor * conversion['año']
+      tiempo = valor * tiempoA['año']
       break
     default:
-      valorFinal = valor
+      tiempo = valor
       break
   }
 
-  return roundNumber(valorFinal, 2)
+  return tiempo
 }
 
 const diasA = {
@@ -69,21 +69,7 @@ function daysToTime(dias: number, tipo: string): number {
       break
   }
 
-  return roundNumber(tiempo, 2)
-}
-
-/**
- * Redondear numero con decimales solicitados
- *
- * @param {number} rnum numero a ser redondeado
- * @param {number} rlength numero de decimales solicitados
- * @link https://stackoverflow.com/questions/5191088/how-to-round-up-a-number-in-javascript#6675283
- * @returns {number}
- */
-function roundNumber(rnum: number, rlength: number): number {
-  const newnumber =
-    Math.round(rnum * Math.pow(10, rlength)) / Math.pow(10, rlength)
-  return newnumber
+  return tiempo
 }
 
 export default { timeToDays, daysToTime }

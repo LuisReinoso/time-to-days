@@ -2,7 +2,7 @@ import tdays from '../src/time-to-days'
 
 describe('Conversion de tiempo a dias', () => {
   it('Deberia convertir horas a dias', () => {
-    expect(tdays.timeToDays(10, 'hora')).toBe(0.42)
+    expect(tdays.timeToDays(10, 'hora')).toBe(0.41666666666666663)
   })
 
   it('Deberia convertir dias a dias', () => {
@@ -32,11 +32,11 @@ describe('Conversion de dias a tiempo', () => {
   })
 
   it('Deberia convertir dias a meses', () => {
-    expect(tdays.daysToTime(2, 'mes')).toBe(0.07)
+    expect(tdays.daysToTime(2, 'mes')).toBe(0.06666666666666667)
   })
 
   it('Deberia convertir dias a años', () => {
-    expect(tdays.daysToTime(2, 'año')).toBe(0.01)
+    expect(tdays.daysToTime(2, 'año')).toBe(0.005479452054794521)
   })
 
   it('Deberia retornar valor si el tipo no existe', () => {
